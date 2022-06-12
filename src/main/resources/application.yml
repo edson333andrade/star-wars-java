@@ -1,0 +1,27 @@
+swagger:
+  api:
+    version: @project.version@
+spring:
+  application:
+    name: start-wars
+  server:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-ui
